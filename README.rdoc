@@ -1,6 +1,12 @@
 = exacto
 
-Description goes here.
+A small library to handle Exact Target subscriptions 
+
+  subscriber = Exacto::Subscriber.new("user@example.com", 
+    :attributes => {:first__name => "John", :last__name => "Smith"})
+  
+  subscriber.subsribe_to(1234)  #1234 is the list id
+  subscriber.unsubscribe_from(1234)
 
 == Note on Patches/Pull Requests
  
