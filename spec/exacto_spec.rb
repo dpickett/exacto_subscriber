@@ -1,7 +1,8 @@
-require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
+require 'spec_helper'
 
-describe "Exacto" do
-  it "fails" do
-    fail "hey buddy, you should probably rename this file and start specing for real"
-  end
+describe Exacto do
+  subject { Exacto }
+  
+  its(:username) { should_not be_nil }
+  its(:password) { should_not be_nil }
 end

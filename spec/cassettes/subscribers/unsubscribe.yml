@@ -1,0 +1,181 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://www.exacttarget.com:443/api/integrate.asp?qf=xml
+    body: xml=%3C%3Fxml%20version%3D%221.0%22%3F%3E%0A%3Cexacttarget%3E%0A%20%20%3Cauthorization%3E%0A%20%20%20%20%3Cusername%3E<%= CGI.escape username %>%3C%2Fusername%3E%0A%20%20%20%20%3Cpassword%3E<%= CGI.escape password %>%3C%2Fpassword%3E%0A%20%20%3C%2Fauthorization%3E%0A%20%20%3Csystem%3E%0A%20%20%20%20%3Csystem_name%3Esubscriber%3C%2Fsystem_name%3E%0A%20%20%20%20%3Caction%3Eretrieve%3C%2Faction%3E%0A%20%20%20%20%3Csearch_type%3Elistid%3C%2Fsearch_type%3E%0A%20%20%20%20%3Csearch_value%3E<%= CGI.escape list_id %>%3C%2Fsearch_value%3E%0A%20%20%20%20%3Csearch_value2%3Euser%40example.com%3C%2Fsearch_value2%3E%0A%20%20%20%20%3CshowChannelID%3E%3C%2FshowChannelID%3E%0A%20%20%3C%2Fsystem%3E%0A%3C%2Fexacttarget%3E%0A
+    headers: 
+      content-type: 
+      - application/x-www-form-urlencoded
+      connection: 
+      - close
+      content-length: 
+      - "676"
+      host: 
+      - www.exacttarget.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-powered-by: 
+      - ASP.NET
+      x-aspnet-version: 
+      - 2.0.50727
+      connection: 
+      - close
+      content-type: 
+      - text/xml; charset=utf-8
+      server: 
+      - Microsoft-IIS/6.0
+      date: 
+      - Tue, 17 Aug 2010 14:02:57 GMT
+      set-cookie: 
+      - ASP.NET_SessionId=0i05lb55v4ojuc45mtmj5s45; path=/; HttpOnly
+      cache-control: 
+      - private
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version='1.0'?>
+      <exacttarget>
+      <system>
+      <subscriber><subid>548704060</subid><listid><%= CGI.escape list_id %></listid><list_name>Development - master</list_name><Full__Name /><Email__Address>user@example.com</Email__Address><User__Defined /><Email__Type>HTML</Email__Type><Status>Active</Status></subscriber></system>
+      </exacttarget>
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://www.exacttarget.com:443/api/integrate.asp?qf=xml
+    body: xml=%3C%3Fxml%20version%3D%221.0%22%3F%3E%0A%3Cexacttarget%3E%0A%20%20%3Cauthorization%3E%0A%20%20%20%20%3Cusername%3E<%= CGI.escape username %>%3C%2Fusername%3E%0A%20%20%20%20%3Cpassword%3E<%= CGI.escape password %>%3C%2Fpassword%3E%0A%20%20%3C%2Fauthorization%3E%0A%20%20%3Csystem%3E%0A%20%20%20%20%3Csystem_name%3Esubscriber%3C%2Fsystem_name%3E%0A%20%20%20%20%3Caction%3Edelete%3C%2Faction%3E%0A%20%20%20%20%3Csearch_type%3Esubid%3C%2Fsearch_type%3E%0A%20%20%20%20%3Csearch_value%3E548704060%3C%2Fsearch_value%3E%0A%20%20%3C%2Fsystem%3E%0A%3C%2Fexacttarget%3E%0A
+    headers: 
+      content-type: 
+      - application/x-www-form-urlencoded
+      connection: 
+      - close
+      content-length: 
+      - "544"
+      host: 
+      - www.exacttarget.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-powered-by: 
+      - ASP.NET
+      x-aspnet-version: 
+      - 2.0.50727
+      connection: 
+      - close
+      content-type: 
+      - text/xml; charset=utf-8
+      server: 
+      - Microsoft-IIS/6.0
+      date: 
+      - Tue, 17 Aug 2010 14:02:58 GMT
+      set-cookie: 
+      - ASP.NET_SessionId=1rwl1xisrqmct5uqff3dl1r0; path=/; HttpOnly
+      cache-control: 
+      - private
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version='1.0'?>
+      <exacttarget>
+      <system>
+      <subscriber><subscriber_info>Subscriber Deleted Sucessfully!</subscriber_info></subscriber></system>
+      </exacttarget>
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://www.exacttarget.com:443/api/integrate.asp?qf=xml
+    body: xml=%3C%3Fxml%20version%3D%221.0%22%3F%3E%0A%3Cexacttarget%3E%0A%20%20%3Cauthorization%3E%0A%20%20%20%20%3Cusername%3E<%= CGI.escape username %>%3C%2Fusername%3E%0A%20%20%20%20%3Cpassword%3E<%= CGI.escape password %>%3C%2Fpassword%3E%0A%20%20%3C%2Fauthorization%3E%0A%20%20%3Csystem%3E%0A%20%20%20%20%3Csystem_name%3Esubscriber%3C%2Fsystem_name%3E%0A%20%20%20%20%3Caction%3Eretrieve%3C%2Faction%3E%0A%20%20%20%20%3Csearch_type%3Elistid%3C%2Fsearch_type%3E%0A%20%20%20%20%3Csearch_value%3E<%= CGI.escape list_id %>%3C%2Fsearch_value%3E%0A%20%20%20%20%3Csearch_value2%3Euser%40example.com%3C%2Fsearch_value2%3E%0A%20%20%20%20%3CshowChannelID%3E%3C%2FshowChannelID%3E%0A%20%20%3C%2Fsystem%3E%0A%3C%2Fexacttarget%3E%0A
+    headers: 
+      content-type: 
+      - application/x-www-form-urlencoded
+      connection: 
+      - close
+      content-length: 
+      - "676"
+      host: 
+      - www.exacttarget.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-powered-by: 
+      - ASP.NET
+      x-aspnet-version: 
+      - 2.0.50727
+      connection: 
+      - close
+      content-type: 
+      - text/xml; charset=utf-8
+      server: 
+      - Microsoft-IIS/6.0
+      date: 
+      - Tue, 17 Aug 2010 14:02:59 GMT
+      set-cookie: 
+      - ASP.NET_SessionId=3cpuafbkzynwezyuknz5en45; path=/; HttpOnly
+      cache-control: 
+      - private
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version='1.0'?>
+      <exacttarget>
+      <system>
+      <subscriber><error>1</error><error_description>Subscriber not found with ListID = <%= CGI.escape list_id %> Email Address = user@example.com</error_description></subscriber></system>
+      </exacttarget>
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://www.exacttarget.com:443/api/integrate.asp?qf=xml
+    body: xml=%3C%3Fxml%20version%3D%221.0%22%3F%3E%0A%3Cexacttarget%3E%0A%20%20%3Cauthorization%3E%0A%20%20%20%20%3Cusername%3E<%= CGI.escape username %>%3C%2Fusername%3E%0A%20%20%20%20%3Cpassword%3E<%= CGI.escape password %>%3C%2Fpassword%3E%0A%20%20%3C%2Fauthorization%3E%0A%20%20%3Csystem%3E%0A%20%20%20%20%3Csystem_name%3Esubscriber%3C%2Fsystem_name%3E%0A%20%20%20%20%3Caction%3Eadd%3C%2Faction%3E%0A%20%20%20%20%3Csearch_type%3Elistid%3C%2Fsearch_type%3E%0A%20%20%20%20%3Csearch_value%3E<%= CGI.escape list_id %>%3C%2Fsearch_value%3E%0A%20%20%20%20%3Csearch_value2%3E%3C%2Fsearch_value2%3E%0A%20%20%20%20%3Cvalues%3E%0A%20%20%20%20%20%20%3Cemail__address%3Euser%40example.com%3C%2Femail__address%3E%0A%20%20%20%20%20%20%3Cstatus%3EUnsubscribed%3C%2Fstatus%3E%0A%20%20%20%20%3C%2Fvalues%3E%0A%20%20%3C%2Fsystem%3E%0A%3C%2Fexacttarget%3E%0A
+    headers: 
+      content-type: 
+      - application/x-www-form-urlencoded
+      connection: 
+      - close
+      content-length: 
+      - "796"
+      host: 
+      - www.exacttarget.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-powered-by: 
+      - ASP.NET
+      x-aspnet-version: 
+      - 2.0.50727
+      connection: 
+      - close
+      content-type: 
+      - text/xml; charset=utf-8
+      server: 
+      - Microsoft-IIS/6.0
+      date: 
+      - Tue, 17 Aug 2010 14:02:59 GMT
+      set-cookie: 
+      - ASP.NET_SessionId=prhxejixo31jg33pforptj45; path=/; HttpOnly
+      cache-control: 
+      - private
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version='1.0'?>
+      <exacttarget>
+      <system>
+      <subscriber><subscriber_info>Subscriber was added/updated successfully</subscriber_info><subscriber_description>548704060</subscriber_description></subscriber></system>
+      </exacttarget>
+
+    http_version: "1.1"

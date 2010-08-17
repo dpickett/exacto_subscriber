@@ -5,12 +5,17 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "exacto"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Manage Exact Target List subscribers}
+    gem.description = %Q{Manage Exact Target List subscribers: more coming}
     gem.email = "dpickett@enlightsolutions.com"
     gem.homepage = "http://github.com/dpickett/exacto"
     gem.authors = ["Dan Pickett"]
-    gem.add_development_dependency "rspec", ">= 1.2.9"
+    gem.add_dependency "configatron", ">= 2.6.3"
+    gem.add_dependency "nokogiri", ">= 1.4.3.1"
+    gem.add_dependency "httparty", ">= 0.6.1"
+    gem.add_development_dependency "rspec", ">= 1.3.0"
+    gem.add_development_dependency "fakeweb", "1.2.8"
+    gem.add_development_dependency "vcr", "1.0.3"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
@@ -68,3 +73,4 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
