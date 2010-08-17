@@ -4,11 +4,11 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "exacto"
+    gem.name = "exacto_subscriber"
     gem.summary = %Q{Manage Exact Target List subscribers}
     gem.description = %Q{Manage Exact Target List subscribers: more coming}
     gem.email = "dpickett@enlightsolutions.com"
-    gem.homepage = "http://github.com/dpickett/exacto"
+    gem.homepage = "http://github.com/dpickett/exacto_subscriber"
     gem.authors = ["Dan Pickett"]
     gem.add_dependency "configatron", ">= 2.6.3"
     gem.add_dependency "nokogiri", ">= 1.4.3.1"
@@ -79,7 +79,7 @@ task :hide_credentials_in_cassettes do
   $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
 
   require "cgi"
-  require "exacto"
+  require "exacto_subscriber"
   configatron.exacto.configure_from_yaml(File.join(File.dirname(__FILE__), 'spec', 'exact_target_credentials.yml'))
 
   Dir.glob("spec/cassettes/**/*.yml").each do |f|

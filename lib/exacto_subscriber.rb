@@ -21,7 +21,7 @@ module Exacto
   end
 end
 
-require "exacto/error"
-require "exacto/base"
+require "exacto_subscriber/error"
+require "exacto_subscriber/base"
 
-require "exacto/subscriber"
+require "exacto_subscriber/subscriber"

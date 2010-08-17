@@ -1,4 +1,4 @@
-= exacto
+= exacto_subscriber
 
 A small library to handle Exact Target subscriptions 
 
