@@ -4,11 +4,11 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "exacto"
+    gem.name = "exacto_subscriber"
     gem.summary = %Q{Manage Exact Target List subscribers}
     gem.description = %Q{Manage Exact Target List subscribers: more coming}
     gem.email = "dpickett@enlightsolutions.com"
-    gem.homepage = "http://github.com/dpickett/exacto"
+    gem.homepage = "http://github.com/dpickett/exacto_subscriber"
     gem.authors = ["Dan Pickett"]
     gem.add_dependency "configatron", ">= 2.6.3"
     gem.add_dependency "nokogiri", ">= 1.4.3.1"
