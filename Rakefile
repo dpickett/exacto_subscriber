@@ -74,3 +74,20 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
+desc "obscures secure information in vcr files"
+task :hide_credentials_in_cassettes do
+  $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
+
+  require "cgi"
+  require "exacto"
+  configatron.exacto.configure_from_yaml(File.join(File.dirname(__FILE__), 'spec', 'exact_target_credentials.yml'))
+
+  Dir.glob("spec/cassettes/**/*.yml").each do |f|
+    contents = File.read(f)
+    File.open(f, "w") do |j|
+      j << contents.gsub(CGI.escape(Exacto.username), "<%= CGI.escape username %>").
+        gsub(CGI.escape(Exacto.password), "<%= CGI.escape password %>").
+        gsub(CGI.escape(configatron.exacto.test_list_id.to_s), "<%= CGI.escape list_id %>")
+    end
+  end  
+end

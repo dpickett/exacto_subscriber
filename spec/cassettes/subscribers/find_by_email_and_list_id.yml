@@ -3,14 +3,14 @@
   request: !ruby/struct:VCR::Request 
     method: :post
     uri: https://www.exacttarget.com:443/api/integrate.asp?qf=xml
-    body: xml=%3C%3Fxml%20version%3D%221.0%22%3F%3E%0A%3Cexacttarget%3E%0A%20%20%3Cauthorization%3E%0A%20%20%20%20%3Cusername%3E<%= CGI.escape username %>%3C%2Fusername%3E%0A%20%20%20%20%3Cpassword%3E<%= CGI.escape password %>%3C%2Fpassword%3E%0A%20%20%3C%2Fauthorization%3E%0A%20%20%3Csystem%3E%0A%20%20%20%20%3Csystem_name%3Esubscriber%3C%2Fsystem_name%3E%0A%20%20%20%20%3Caction%3Eretrieve%3C%2Faction%3E%0A%20%20%20%20%3Csearch_type%3Elistid%3C%2Fsearch_type%3E%0A%20%20%20%20%3Csearch_value%3E<%= CGI.escape list_id %>%3C%2Fsearch_value%3E%0A%20%20%20%20%3Csearch_value2%3Euser%40example.com%3C%2Fsearch_value2%3E%0A%20%20%20%20%3CshowChannelID%3E%3C%2FshowChannelID%3E%0A%20%20%3C%2Fsystem%3E%0A%3C%2Fexacttarget%3E%0A
+    body: xml=%3C%3Fxml%20version%3D%221.0%22%3F%3E%0A%3Cexacttarget%3E%0A%20%20%3Cauthorization%3E%0A%20%20%20%20%3Cusername%3E<%= CGI.escape username %>%3C%2Fusername%3E%0A%20%20%20%20%3Cpassword%3E<%= CGI.escape password %>%3C%2Fpassword%3E%0A%20%20%3C%2Fauthorization%3E%0A%20%20%3Csystem%3E%0A%20%20%20%20%3Csystem_name%3Esubscriber%3C%2Fsystem_name%3E%0A%20%20%20%20%3Caction%3Eretrieve%3C%2Faction%3E%0A%20%20%20%20%3Csearch_type%3Elistid%3C%2Fsearch_type%3E%0A%20%20%20%20%3Csearch_value%3E<%= CGI.escape list_id %>%3C%2Fsearch_value%3E%0A%20%20%20%20%3Csearch_value2%3Euser3%40example.com%3C%2Fsearch_value2%3E%0A%20%20%20%20%3CshowChannelID%3E%3C%2FshowChannelID%3E%0A%20%20%3C%2Fsystem%3E%0A%3C%2Fexacttarget%3E%0A
     headers: 
       content-type: 
       - application/x-www-form-urlencoded
       connection: 
       - close
       content-length: 
-      - "676"
+      - "677"
       host: 
       - www.exacttarget.com
   response: !ruby/struct:VCR::Response 
@@ -29,9 +29,9 @@
       server: 
       - Microsoft-IIS/6.0
       date: 
-      - Tue, 17 Aug 2010 14:03:01 GMT
+      - Tue, 17 Aug 2010 15:58:00 GMT
       set-cookie: 
-      - ASP.NET_SessionId=hoyiqq45rr0vc1rgl4xt2245; path=/; HttpOnly
+      - ASP.NET_SessionId=egukyha25rlc4045qizuwu45; path=/; HttpOnly
       cache-control: 
       - private
       transfer-encoding: 
@@ -40,7 +40,7 @@
       <?xml version='1.0'?>
       <exacttarget>
       <system>
-      <subscriber><subid>548704060</subid><listid><%= CGI.escape list_id %></listid><list_name>Development - master</list_name><Full__Name /><Email__Address>user@example.com</Email__Address><User__Defined /><Email__Type>HTML</Email__Type><Status>Unsubscribed</Status></subscriber></system>
+      <subscriber><subid>548749517</subid><listid><%= CGI.escape list_id %></listid><list_name>Development - master</list_name><Full__Name /><Email__Address>user3@example.com</Email__Address><User__Defined /><Email__Type>HTML</Email__Type><Status>Unsubscribed</Status><First__Name>John</First__Name><Last__Name>Smith</Last__Name><Packing__Slip__Count /><Originating__Partner /></subscriber></system>
       </exacttarget>
 
     http_version: "1.1"
