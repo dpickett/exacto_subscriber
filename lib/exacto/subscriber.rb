@@ -1,7 +1,7 @@
 module Exacto
   class Subscriber < Exacto::Base 
-    attr_reader :email, :attrs, :subscriber_id
-    attr_accessor :list_id, :status
+    attr_reader :email, :subscriber_id
+    attr_accessor :list_id, :status, :attributes
         
     def initialize(options = {})
       update_from_options(options)
@@ -35,10 +35,7 @@ module Exacto
         xml.search_type "listid"
         xml.search_value @list_id
         xml.search_value2 nil
-        xml.values do
-          xml.email__address @email
-          xml.status @status || "active"
-        end
+        resource_xml(xml)
       end
     end
     
@@ -48,10 +45,18 @@ module Exacto
         xml.search_type "listid"
         xml.search_value @list_id
         xml.search_value2 email
-        xml.values do 
-          xml.status @status || "active"
-        end
+        resource_xml(xml)
         xml.update true
+      end
+    end
+
+    def resource_xml(xml)
+      xml.values do
+        xml.email__address @email
+        xml.status @status || "active"
+        (self.attributes || {}).each do |field, val|
+          xml.send(field, val) 
+        end
       end
     end
     
@@ -67,6 +72,7 @@ module Exacto
       @email  = options[:email]
       @status = options[:status]
       @subscriber_id = options[:subscriber_id]
+      @attributes = options[:attributes] || {}
     end
     
     def self.find_by_email_and_list_id(email, list_id)

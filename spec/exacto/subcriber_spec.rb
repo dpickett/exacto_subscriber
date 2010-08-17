@@ -2,8 +2,12 @@ require 'spec_helper'
 
 describe Exacto::Subscriber do
   let(:list_id) { configatron.exacto.test_list_id }
-  let(:email) { "user@example.com" }
-  subject { Exacto::Subscriber.new(:email => email) }
+  let(:email) { "user3@example.com" }
+  subject do
+    Exacto::Subscriber.new(
+      :email      => email, 
+      :attributes => {"First__Name" => "John", "Last__Name" => "Smith"})
+  end
   
   describe 'subscriptions' do
     before(:each) do
