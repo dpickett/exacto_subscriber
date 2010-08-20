@@ -8,9 +8,11 @@ module Exacto
     end
     
     def subscribe_to(list_id)
+      @status = "active"
       @list_id = list_id
       if item = self.class.find_by_email_and_list_id(email, list_id)
         item.list_id = list_id
+        item.status = @status
         item.update
       else
         create
@@ -30,6 +32,7 @@ module Exacto
     end
     
     def create
+      @status ||= "active"
       issue_request do |xml|
         xml.action "add"
         xml.search_type "listid"
@@ -53,7 +56,7 @@ module Exacto
     def resource_xml(xml)
       xml.values do
         xml.email__address @email
-        xml.status @status || "active"
+        xml.status @status if @status
         (self.attributes || {}).each do |field, val|
           xml.send(field, val) 
         end

@@ -29,9 +29,9 @@
       server: 
       - Microsoft-IIS/6.0
       date: 
-      - Tue, 17 Aug 2010 15:57:56 GMT
+      - Fri, 20 Aug 2010 14:29:37 GMT
       set-cookie: 
-      - ASP.NET_SessionId=ozehg545vffjxh45we1kx5j0; path=/; HttpOnly
+      - ASP.NET_SessionId=dpxpqhbwps5xyounbg2llx45; path=/; HttpOnly
       cache-control: 
       - private
       transfer-encoding: 
@@ -74,9 +74,9 @@
       server: 
       - Microsoft-IIS/6.0
       date: 
-      - Tue, 17 Aug 2010 15:57:57 GMT
+      - Fri, 20 Aug 2010 14:29:37 GMT
       set-cookie: 
-      - ASP.NET_SessionId=o3noh1brm5lxjn2tlayuozes; path=/; HttpOnly
+      - ASP.NET_SessionId=0h12lrmfqvvr3s55lyfy0kqc; path=/; HttpOnly
       cache-control: 
       - private
       transfer-encoding: 
@@ -119,9 +119,9 @@
       server: 
       - Microsoft-IIS/6.0
       date: 
-      - Tue, 17 Aug 2010 15:57:58 GMT
+      - Fri, 20 Aug 2010 14:29:39 GMT
       set-cookie: 
-      - ASP.NET_SessionId=doix3y55bi15fzeocix1czvl; path=/; HttpOnly
+      - ASP.NET_SessionId=dovlhm4534gpkqyxzk3veqm1; path=/; HttpOnly
       cache-control: 
       - private
       transfer-encoding: 
@@ -164,9 +164,9 @@
       server: 
       - Microsoft-IIS/6.0
       date: 
-      - Tue, 17 Aug 2010 15:57:59 GMT
+      - Fri, 20 Aug 2010 14:29:40 GMT
       set-cookie: 
-      - ASP.NET_SessionId=cjz4qy45hoqtxm55rgfxicvv; path=/; HttpOnly
+      - ASP.NET_SessionId=jpwqno4542blwyqudden0w45; path=/; HttpOnly
       cache-control: 
       - private
       transfer-encoding: 
