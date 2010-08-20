@@ -70,4 +70,5 @@ describe Exacto::Subscriber do
     its(:email) { should_not be_nil }
     its(:subscriber_id) {should_not be_nil}
   end
+  
 end
