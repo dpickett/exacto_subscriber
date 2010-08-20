@@ -13,6 +13,7 @@ module Exacto
       if item = self.class.find_by_email_and_list_id(email, list_id)
         item.list_id = list_id
         item.status = @status
+        item.attributes = attributes
         item.update
       else
         create
@@ -25,6 +26,7 @@ module Exacto
       if item = self.class.find_by_email_and_list_id(email, list_id)
         item.list_id = list_id
         item.status = status
+        item.attributes = attributes
         item.update
       else
         create
