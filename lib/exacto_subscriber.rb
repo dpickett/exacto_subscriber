@@ -4,8 +4,8 @@ require "httparty"
 require "nokogiri"
 
 module Exacto
-  def self.user=(user)
-    configatron.exacto.user = user
+  def self.username=(user)
+    configatron.exacto.username = user
   end
   
   def self.username
