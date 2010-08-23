@@ -11,7 +11,7 @@ begin
     gem.homepage = "http://github.com/dpickett/exacto_subscriber"
     gem.authors = ["Dan Pickett"]
     gem.add_dependency "configatron", ">= 2.6.3"
-    gem.add_dependency "nokogiri", ">= 1.4.3.1"
+    gem.add_dependency "nokogiri", ">= 1.3.3"
     gem.add_dependency "httparty", ">= 0.6.1"
     gem.add_development_dependency "rspec", ">= 1.3.0"
     gem.add_development_dependency "fakeweb", "1.2.8"
