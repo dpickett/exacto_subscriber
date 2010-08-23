@@ -77,6 +77,7 @@ module Exacto
       @email  = options[:email]
       @status = options[:status]
       @subscriber_id = options[:subscriber_id]
+      @list_id    = options[:list_id]
       @attributes = options[:attributes] || {}
     end
     
