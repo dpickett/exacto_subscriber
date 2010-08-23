@@ -60,7 +60,7 @@ module Exacto
         xml.email__address @email
         xml.status @status if @status
         (self.attributes || {}).each do |field, val|
-          xml.send(field, val) 
+          xml.send(field.to_s.gsub("_", "__"), val) 
         end
       end
     end
