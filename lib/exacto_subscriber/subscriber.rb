@@ -1,6 +1,6 @@
 module Exacto
   class Subscriber < Exacto::Base 
-    attr_reader :email, :subscriber_id
+    attr_reader :email_address, :subscriber_id
     attr_accessor :list_id, :status, :attributes
         
     def initialize(options = {})
@@ -10,7 +10,7 @@ module Exacto
     def subscribe_to(list_id)
       @status = "active"
       @list_id = list_id
-      if item = self.class.find_by_email_and_list_id(email, list_id)
+      if item = self.class.find_by_email_and_list_id(email_address, list_id)
         item.list_id = list_id
         item.status = @status
         item.attributes = attributes
@@ -18,12 +18,14 @@ module Exacto
       else
         create
       end
+      
+      self
     end
     
     def unsubscribe_from(list_id)
       @list_id = list_id
       @status = "Unsubscribed"
-      if item = self.class.find_by_email_and_list_id(email, list_id)
+      if item = self.class.find_by_email_and_list_id(email_address, list_id)
         item.list_id = list_id
         item.status = status
         item.attributes = attributes
@@ -31,6 +33,8 @@ module Exacto
       else
         create
       end
+      
+      self
     end
     
     def create
@@ -49,7 +53,7 @@ module Exacto
         xml.action "edit"
         xml.search_type "listid"
         xml.search_value @list_id
-        xml.search_value2 email
+        xml.search_value2 email_address
         resource_xml(xml)
         xml.update true
       end
@@ -57,7 +61,7 @@ module Exacto
 
     def resource_xml(xml)
       xml.values do
-        xml.email__address @email
+        xml.email__address @email_address
         xml.status @status if @status
         (self.attributes || {}).each do |field, val|
           xml.send(field.to_s.gsub("_", "__"), val) 
@@ -74,20 +78,20 @@ module Exacto
     end
     
     def update_from_options(options)
-      @email  = options[:email]
+      @email_address  = options[:email_address]
       @status = options[:status]
       @subscriber_id = options[:subscriber_id]
       @list_id    = options[:list_id]
       @attributes = options[:attributes] || {}
     end
     
-    def self.find_by_email_and_list_id(email, list_id)
+    def self.find_by_email_and_list_id(email_address, list_id)
       begin
         result = issue_request do |xml|
           xml.action "retrieve"
           xml.search_type "listid"
           xml.search_value list_id
-          xml.search_value2 email
+          xml.search_value2 email_address
           xml.showChannelID nil
         end
       rescue Error => e
@@ -98,22 +102,7 @@ module Exacto
         end
       end
       
-      result.nil? ? nil : new(normalize(result))
-    end
-    
-    def self.normalize(resulting_hash)
-      new_hash = {}
-      resulting_hash.each do |key, value|
-        if key =~ /subid/
-          new_hash[:subscriber_id] = value
-        elsif key =~ /Email\_\_Address/
-          new_hash[:email] = value
-        else
-          new_hash[key.gsub(/\_\_/, "_").gsub(/id/, "_id").downcase.to_sym] = value
-        end
-      end
-      
-      new_hash
+      result.nil? || result.empty? ? nil : new(normalize(result))
     end
     
     def self.system_name

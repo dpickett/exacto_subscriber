@@ -1,0 +1,54 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://www.exacttarget.com:443/api/integrate.asp?qf=xml
+    body: xml=%3C%3Fxml%20version%3D%221.0%22%3F%3E%0A%3Cexacttarget%3E%0A%20%20%3Cauthorization%3E%0A%20%20%20%20%3Cusername%3E<%= CGI.escape username %>%3C%2Fusername%3E%0A%20%20%20%20%3Cpassword%3E<%= CGI.escape password %>%3C%2Fpassword%3E%0A%20%20%3C%2Fauthorization%3E%0A%20%20%3Csystem%3E%0A%20%20%20%20%3Csystem_name%3Etracking%3C%2Fsystem_name%3E%0A%20%20%20%20%3Caction%3Eretrieve%3C%2Faction%3E%0A%20%20%20%20%3Csub_action%3Emasterunsub%3C%2Fsub_action%3E%0A%20%20%20%20%3Csearch_type%3E%3C%2Fsearch_type%3E%0A%20%20%20%20%3Csearch_value%3E%3C%2Fsearch_value%3E%0A%20%20%20%20%3Cdaterange%3E%0A%20%20%20%20%20%20%3Cstartdate%3E8%2F1%2F2010%3C%2Fstartdate%3E%0A%20%20%20%20%20%20%3Cenddate%3E9%2F1%2F2010%3C%2Fenddate%3E%0A%20%20%20%20%3C%2Fdaterange%3E%0A%20%20%3C%2Fsystem%3E%0A%3C%2Fexacttarget%3E%0A
+    headers: 
+      content-type: 
+      - application/x-www-form-urlencoded
+      connection: 
+      - close
+      content-length: 
+      - "782"
+      host: 
+      - www.exacttarget.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-powered-by: 
+      - ASP.NET
+      x-aspnet-version: 
+      - 2.0.50727
+      connection: 
+      - close
+      content-type: 
+      - text/xml; charset=utf-8
+      server: 
+      - Microsoft-IIS/6.0
+      date: 
+      - Tue, 31 Aug 2010 16:03:07 GMT
+      set-cookie: 
+      - ASP.NET_SessionId=f0jwbg55z5yeom55t0moaojx; path=/; HttpOnly
+      cache-control: 
+      - private
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version='1.0'?>
+      <exacttarget>
+      <system>
+      <tracking>
+      <masterunsub><subscriber>
+      <email_address>wai@secondrotation.com</email_address>
+      <name/>
+      <reason>Unsubscribed from list details on subscriber properties dialog.</reason>
+      <unsub_date_time>8/31/2010 8:50:00 AM</unsub_date_time>
+      </subscriber>
+      </masterunsub></tracking>
+      </system>
+      </exacttarget>
+
+    http_version: "1.1"

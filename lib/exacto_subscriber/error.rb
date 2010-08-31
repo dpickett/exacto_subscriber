@@ -8,7 +8,7 @@ module Exacto
     end
     
     def self.from_response(response)
-      if code = response["error"]
+      if response && code = response["error"]
         raise new(code, response["error_description"])
       end
     end

@@ -21,7 +21,13 @@ module Exacto
   end
 end
 
+require "exacto_subscriber/ext/hacked_request"
+
 require "exacto_subscriber/error"
 require "exacto_subscriber/base"
 
 require "exacto_subscriber/subscriber"
+
+require "exacto_subscriber/unsubscription"
+require "exacto_subscriber/list_unsubscription"
+require "exacto_subscriber/master_list_unsubscription"

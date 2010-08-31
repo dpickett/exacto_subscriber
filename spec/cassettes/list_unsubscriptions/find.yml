@@ -1,0 +1,46 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://www.exacttarget.com:443/api/integrate.asp?qf=xml
+    body: xml=%3C%3Fxml%20version%3D%221.0%22%3F%3E%0A%3Cexacttarget%3E%0A%20%20%3Cauthorization%3E%0A%20%20%20%20%3Cusername%3E<%= CGI.escape username %>%3C%2Fusername%3E%0A%20%20%20%20%3Cpassword%3E<%= CGI.escape password %>%3C%2Fpassword%3E%0A%20%20%3C%2Fauthorization%3E%0A%20%20%3Csystem%3E%0A%20%20%20%20%3Csystem_name%3Elist%3C%2Fsystem_name%3E%0A%20%20%20%20%3Caction%3Eretrieve_sub%3C%2Faction%3E%0A%20%20%20%20%3Csearch_type%3Elistid%3C%2Fsearch_type%3E%0A%20%20%20%20%3Csearch_value%3E<%= CGI.escape list_id %>%3C%2Fsearch_value%3E%0A%20%20%20%20%3Csearch_status%3EUnsubscribed%3C%2Fsearch_status%3E%0A%20%20%3C%2Fsystem%3E%0A%3C%2Fexacttarget%3E%0A
+    headers: 
+      content-type: 
+      - application/x-www-form-urlencoded
+      connection: 
+      - close
+      content-length: 
+      - "612"
+      host: 
+      - www.exacttarget.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-powered-by: 
+      - ASP.NET
+      x-aspnet-version: 
+      - 2.0.50727
+      connection: 
+      - close
+      content-type: 
+      - text/xml; charset=utf-8
+      server: 
+      - Microsoft-IIS/6.0
+      date: 
+      - Tue, 31 Aug 2010 16:00:10 GMT
+      set-cookie: 
+      - ASP.NET_SessionId=yxuywfncnj3vjcq0vzq2ryzq; path=/; HttpOnly
+      cache-control: 
+      - private
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version='1.0'?>
+      <exacttarget>
+      <system>
+      <list><subscribers><subscriber><id>548693262</id><Email__Address>dpickett@secondrotation.com</Email__Address><EmailType>HTML</EmailType><Status>Unsubscribed</Status><First__Name>Daniel</First__Name><Last__Name>Pickett</Last__Name><Originating__Partner /><Packing__Slip__Count>0</Packing__Slip__Count><Accepted__Transaction__Count>0</Accepted__Transaction__Count><Accepted__Transaction__Value>0</Accepted__Transaction__Value></subscriber><subscriber><id>550133036</id><Email__Address>james@secondrotation.com</Email__Address><EmailType>HTML</EmailType><Status>Unsubscribed</Status><First__Name>James</First__Name><Last__Name>McElhiney</Last__Name><Originating__Partner /><Packing__Slip__Count>0</Packing__Slip__Count><Accepted__Transaction__Count>0</Accepted__Transaction__Count><Accepted__Transaction__Value>0</Accepted__Transaction__Value></subscriber><subscriber><id>550133037</id><Email__Address>shari@secondrotation.com</Email__Address><EmailType>HTML</EmailType><Status>Unsubscribed</Status><First__Name>Shari</First__Name><Last__Name>Silvers</Last__Name><Originating__Partner /><Packing__Slip__Count>0</Packing__Slip__Count><Accepted__Transaction__Count>0</Accepted__Transaction__Count><Accepted__Transaction__Value>0</Accepted__Transaction__Value></subscriber><subscriber><id>550133043</id><Email__Address>wai@secondrotation.com</Email__Address><EmailType>HTML</EmailType><Status>Unsubscribed</Status><First__Name>Wai</First__Name><Last__Name>Cheng</Last__Name><Originating__Partner /><Packing__Slip__Count>0</Packing__Slip__Count><Accepted__Transaction__Count>0</Accepted__Transaction__Count><Accepted__Transaction__Value>0</Accepted__Transaction__Value></subscriber><subscriber><id>550133044</id><Email__Address>ex-rousseau@secondrotation.com</Email__Address><EmailType>HTML</EmailType><Status>Unsubscribed</Status><First__Name>Rousseau</First__Name><Last__Name>Aurelien</Last__Name><Originating__Partner /><Packing__Slip__Count>0</Packing__Slip__Count><Accepted__Transaction__Count>0</Accepted__Transaction__Count><Accepted__Transaction__Value>0</Accepted__Transaction__Value></subscriber><subscriber><id>550133073</id><Email__Address>demo@secondrotation.com</Email__Address><EmailType>HTML</EmailType><Status>Unsubscribed</Status><First__Name>Demo</First__Name><Last__Name>Account</Last__Name><Originating__Partner /><Packing__Slip__Count>0</Packing__Slip__Count><Accepted__Transaction__Count>0</Accepted__Transaction__Count><Accepted__Transaction__Value>0</Accepted__Transaction__Value></subscriber><subscriber><id>550133084</id><Email__Address>email-1076@example.com</Email__Address><EmailType>HTML</EmailType><Status>Unsubscribed</Status><First__Name>Anthony</First__Name><Last__Name>Lee</Last__Name><Originating__Partner>gazelle</Originating__Partner><Packing__Slip__Count>1</Packing__Slip__Count><Accepted__Transaction__Count>0</Accepted__Transaction__Count><Accepted__Transaction__Value>0</Accepted__Transaction__Value></subscriber><subscriber><id>550133104</id><Email__Address>lilith@secondrotation.com</Email__Address><EmailType>HTML</EmailType><Status>Unsubscribed</Status><First__Name>Lilith</First__Name><Last__Name>Arthur</Last__Name><Originating__Partner>gazelle</Originating__Partner><Packing__Slip__Count>1</Packing__Slip__Count><Accepted__Transaction__Count>0</Accepted__Transaction__Count><Accepted__Transaction__Value>0</Accepted__Transaction__Value></subscriber><subscriber><id>550133106</id><Email__Address>++donna@secondrotation.com</Email__Address><EmailType>HTML</EmailType><Status>Unsubscribed</Status><First__Name>Donna</First__Name><Last__Name>Le</Last__Name><Originating__Partner /><Packing__Slip__Count>0</Packing__Slip__Count><Accepted__Transaction__Count>0</Accepted__Transaction__Count><Accepted__Transaction__Value>0</Accepted__Transaction__Value></subscriber><subscriber><id>550133120</id><Email__Address>email-2063@example.com</Email__Address><EmailType>HTML</EmailType><Status>Unsubscribed</Status><First__Name>Anna</First__Name><Last__Name>Butler</Last__Name><Originating__Partner>gazelle</Originating__Partner><Packing__Slip__Count>2</Packing__Slip__Count><Accepted__Transaction__Count>1</Accepted__Transaction__Count><Accepted__Transaction__Value>122.099998474121</Accepted__Transaction__Value></subscriber><subscriber><id>550133226</id><Email__Address>email-2630@example.com</Email__Address><EmailType>HTML</EmailType><Status>Unsubscribed</Status><First__Name>Jeffrey</First__Name><Last__Name>Cooper</Last__Name><Originating__Partner>gazelle</Originating__Partner><Packing__Slip__Count>1</Packing__Slip__Count><Accepted__Transaction__Count>0</Accepted__Transaction__Count><Accepted__Transaction__Value>0</Accepted__Transaction__Value></subscriber><subscriber><id>550133271</id><Email__Address>thos@secondrotation.com</Email__Address><EmailType>HTML</EmailType><Status>Unsubscribed</Status><First__Name>Thos</First__Name><Last__Name>Niles</Last__Name><Originating__Partner>gazelle</Originating__Partner><Packing__Slip__Count>1</Packing__Slip__Count><Accepted__Transaction__Count>0</Accepted__Transaction__Count><Accepted__Transaction__Value>0</Accepted__Transaction__Value></subscriber><subscriber><id>550133272</id><Email__Address>email-3521@example.com</Email__Address><EmailType>HTML</EmailType><Status>Unsubscribed</Status><First__Name>Raymond</First__Name><Last__Name>Sanders</Last__Name><Originating__Partner>gazelle</Originating__Partner><Packing__Slip__Count>1</Packing__Slip__Count><Accepted__Transaction__Count>0</Accepted__Transaction__Count><Accepted__Transaction__Value>0</Accepted__Transaction__Value></subscriber><subscriber><id>550133289</id><Email__Address>email-3911@example.com</Email__Address><EmailType>HTML</EmailType><Status>Unsubscribed</Status><First__Name>Mary</First__Name><Last__Name>Baker</Last__Name><Originating__Partner>gazelle</Originating__Partner><Packing__Slip__Count>1</Packing__Slip__Count><Accepted__Transaction__Count>0</Accepted__Transaction__Count><Accepted__Transaction__Value>0</Accepted__Transaction__Value></subscriber><subscriber><id>550133316</id><Email__Address>email-4639@example.com</Email__Address><EmailType>HTML</EmailType><Status>Unsubscribed</Status><First__Name>Timothy</First__Name><Last__Name>Evans</Last__Name><Originating__Partner>gazelle</Originating__Partner><Packing__Slip__Count>2</Packing__Slip__Count><Accepted__Transaction__Count>0</Accepted__Transaction__Count><Accepted__Transaction__Value>0</Accepted__Transaction__Value></subscriber></subscribers></list></system>
+      </exacttarget>
+
+    http_version: "1.1"
