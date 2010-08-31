@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{exacto_subscriber}
-  s.version = "0.1.2"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dan Pickett"]
-  s.date = %q{2010-08-23}
+  s.date = %q{2010-08-31}
   s.description = %q{Manage Exact Target List subscribers: more coming}
   s.email = %q{dpickett@enlightsolutions.com}
   s.extra_rdoc_files = [
@@ -29,11 +29,20 @@ Gem::Specification.new do |s|
      "lib/exacto_subscriber.rb",
      "lib/exacto_subscriber/base.rb",
      "lib/exacto_subscriber/error.rb",
+     "lib/exacto_subscriber/ext/hacked_request.rb",
+     "lib/exacto_subscriber/list_unsubscription.rb",
+     "lib/exacto_subscriber/master_list_unsubscription.rb",
      "lib/exacto_subscriber/subscriber.rb",
+     "lib/exacto_subscriber/unsubscription.rb",
+     "spec/cassettes/list_unsubscriptions/find.yml",
+     "spec/cassettes/master_list_unsubscriptions/find_existing.yml",
+     "spec/cassettes/master_list_unsubscriptions/find_nonexistent.yml",
      "spec/cassettes/subscribers/find_by_email_and_list_id.yml",
      "spec/cassettes/subscribers/subscribe.yml",
      "spec/cassettes/subscribers/unsubscribe.yml",
      "spec/exact_target_credentials.example.yml",
+     "spec/exacto_subscriber/list_unsubscription_spec.rb",
+     "spec/exacto_subscriber/master_list_unsubscription_spec.rb",
      "spec/exacto_subscriber/subcriber_spec.rb",
      "spec/exacto_subscriber/unsubscription_spec.rb",
      "spec/exacto_subscriber_spec.rb",
@@ -46,7 +55,9 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Manage Exact Target List subscribers}
   s.test_files = [
-    "spec/exacto_subscriber/subcriber_spec.rb",
+    "spec/exacto_subscriber/list_unsubscription_spec.rb",
+     "spec/exacto_subscriber/master_list_unsubscription_spec.rb",
+     "spec/exacto_subscriber/subcriber_spec.rb",
      "spec/exacto_subscriber/unsubscription_spec.rb",
      "spec/exacto_subscriber_spec.rb",
      "spec/spec_helper.rb"
