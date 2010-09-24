@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{exacto_subscriber}
-  s.version = "0.2.0"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dan Pickett"]
-  s.date = %q{2010-08-31}
+  s.date = %q{2010-09-24}
   s.description = %q{Manage Exact Target List subscribers: more coming}
   s.email = %q{dpickett@enlightsolutions.com}
   s.extra_rdoc_files = [
