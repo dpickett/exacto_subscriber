@@ -24,7 +24,9 @@ module Exacto
           end
         end
         
-        resp = parse_response(post("/integrate.asp", :body => {:xml => builder.to_xml}))
+        resp = parse_response(post("/integrate.asp", 
+          :body => {:xml => builder.to_xml}, 
+          :timeout => Exacto.default_timeout))
       end
     end
     

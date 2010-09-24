@@ -29,9 +29,9 @@
       server: 
       - Microsoft-IIS/6.0
       date: 
-      - Tue, 31 Aug 2010 16:03:08 GMT
+      - Fri, 24 Sep 2010 21:25:38 GMT
       set-cookie: 
-      - ASP.NET_SessionId=ucgyrv451ub3sw55feopvnqq; path=/; HttpOnly
+      - ASP.NET_SessionId=u5u1y345kopugn45n4rsmze0; path=/; HttpOnly
       cache-control: 
       - private
       transfer-encoding: 
