@@ -77,4 +77,24 @@ describe Exacto::Subscriber do
     its(:subscriber_id) { should_not be_nil }
   end
   
+  describe "error conditions" do
+    it 'should raise an exacto error if Exact Target returns an error' do
+      fake_response(:post, "https://www.exacttarget.com/api/integrate.asp?qf=xml", 
+        read_mock_response("exact_target_supplied_response_error"))
+      lambda { subject.subscribe_to(list_id) }.should raise_error(Exacto::Error)
+    end
+    it "should raise a response error if Exact Target does not return an intended response" do
+      fake_response(:post, "https://www.exacttarget.com/api/integrate.asp?qf=xml",
+        read_mock_response("blank_response"))
+    end
+  end  
+  
+  def fake_response(method, uri, body)
+    FakeWeb.register_uri(method, uri, :body => body, :content_type => "text/xml")
+  end
+  
+  MOCK_RESPONSE_DIR = File.join(File.dirname(__FILE__), "../mock_responses")
+  def read_mock_response(base_file_name)
+    File.read(File.join(MOCK_RESPONSE_DIR, "#{base_file_name}.xml"))
+  end
 end

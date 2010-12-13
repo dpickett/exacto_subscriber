@@ -1,0 +1,5 @@
+<?xml version='1.0'?>
+<exacttarget>
+<system>
+<subscriber><error>1</error><error_description>Subscriber not found with ListID = 324123415 Email Address = user3@example.com</error_description></subscriber></system>
+</exacttarget>

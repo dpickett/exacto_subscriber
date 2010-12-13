@@ -13,8 +13,9 @@ begin
     gem.add_dependency "configatron", ">= 2.6.3"
     gem.add_dependency "nokogiri", ">= 1.3.3"
     gem.add_dependency "httparty", ">= 0.6.1"
-    gem.add_development_dependency "rspec", ">= 1.3.0"
+    gem.add_development_dependency "rspec", ">= 1.3.1"
     gem.add_development_dependency "fakeweb", "1.2.8"
+    gem.add_development_dependency "mocha", "0.9.10"
     gem.add_development_dependency "vcr", "1.0.3"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end

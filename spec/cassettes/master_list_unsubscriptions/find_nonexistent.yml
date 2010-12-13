@@ -18,20 +18,14 @@
       code: 200
       message: OK
     headers: 
-      x-powered-by: 
-      - ASP.NET
-      x-aspnet-version: 
-      - 2.0.50727
       connection: 
       - close
       content-type: 
       - text/xml; charset=utf-8
-      server: 
-      - Microsoft-IIS/6.0
       date: 
-      - Fri, 24 Sep 2010 21:25:38 GMT
+      - Mon, 13 Dec 2010 16:51:20 GMT
       set-cookie: 
-      - ASP.NET_SessionId=u5u1y345kopugn45n4rsmze0; path=/; HttpOnly
+      - ASP.NET_SessionId=takoq0nzexfogma4dewdbzn2; path=/; HttpOnly
       cache-control: 
       - private
       transfer-encoding: 

@@ -31,7 +31,11 @@ module Exacto
     end
     
     def self.parse_response(response)
-      raise_errors_for(response["exacttarget"]["system"][self.request_system_name])
+      if response["exacttarget"] && response["exacttarget"]["system"]
+        raise_errors_for(response["exacttarget"]["system"][self.request_system_name])
+      else
+        raise Exacto::ResponseError.new(response.body)
+      end
       trimmed_response = trim_response(response)
 
       trimmed_response = trimmed_response[self.response_system_name] if trimmed_response

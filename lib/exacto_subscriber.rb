@@ -32,6 +32,7 @@ end
 require "exacto_subscriber/ext/hacked_request"
 
 require "exacto_subscriber/error"
+require "exacto_subscriber/response_error"
 require "exacto_subscriber/base"
 
 require "exacto_subscriber/subscriber"
