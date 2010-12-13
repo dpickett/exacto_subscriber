@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{exacto_subscriber}
-  s.version = "0.2.1"
+  s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dan Pickett"]
-  s.date = %q{2010-09-24}
+  s.date = %q{2010-12-13}
   s.description = %q{Manage Exact Target List subscribers: more coming}
   s.email = %q{dpickett@enlightsolutions.com}
   s.extra_rdoc_files = [
@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
      "lib/exacto_subscriber/ext/hacked_request.rb",
      "lib/exacto_subscriber/list_unsubscription.rb",
      "lib/exacto_subscriber/master_list_unsubscription.rb",
+     "lib/exacto_subscriber/response_error.rb",
      "lib/exacto_subscriber/subscriber.rb",
      "lib/exacto_subscriber/unsubscription.rb",
      "spec/cassettes/list_unsubscriptions/find.yml",
@@ -46,6 +47,8 @@ Gem::Specification.new do |s|
      "spec/exacto_subscriber/subcriber_spec.rb",
      "spec/exacto_subscriber/unsubscription_spec.rb",
      "spec/exacto_subscriber_spec.rb",
+     "spec/mock_responses/blank_response.xml",
+     "spec/mock_responses/exact_target_supplied_response_error.xml",
      "spec/spec.opts",
      "spec/spec_helper.rb"
   ]
@@ -71,23 +74,26 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<configatron>, [">= 2.6.3"])
       s.add_runtime_dependency(%q<nokogiri>, [">= 1.3.3"])
       s.add_runtime_dependency(%q<httparty>, [">= 0.6.1"])
-      s.add_development_dependency(%q<rspec>, [">= 1.3.0"])
+      s.add_development_dependency(%q<rspec>, [">= 1.3.1"])
       s.add_development_dependency(%q<fakeweb>, ["= 1.2.8"])
+      s.add_development_dependency(%q<mocha>, ["= 0.9.10"])
       s.add_development_dependency(%q<vcr>, ["= 1.0.3"])
     else
       s.add_dependency(%q<configatron>, [">= 2.6.3"])
       s.add_dependency(%q<nokogiri>, [">= 1.3.3"])
       s.add_dependency(%q<httparty>, [">= 0.6.1"])
-      s.add_dependency(%q<rspec>, [">= 1.3.0"])
+      s.add_dependency(%q<rspec>, [">= 1.3.1"])
       s.add_dependency(%q<fakeweb>, ["= 1.2.8"])
+      s.add_dependency(%q<mocha>, ["= 0.9.10"])
       s.add_dependency(%q<vcr>, ["= 1.0.3"])
     end
   else
     s.add_dependency(%q<configatron>, [">= 2.6.3"])
     s.add_dependency(%q<nokogiri>, [">= 1.3.3"])
     s.add_dependency(%q<httparty>, [">= 0.6.1"])
-    s.add_dependency(%q<rspec>, [">= 1.3.0"])
+    s.add_dependency(%q<rspec>, [">= 1.3.1"])
     s.add_dependency(%q<fakeweb>, ["= 1.2.8"])
+    s.add_dependency(%q<mocha>, ["= 0.9.10"])
     s.add_dependency(%q<vcr>, ["= 1.0.3"])
   end
 end
